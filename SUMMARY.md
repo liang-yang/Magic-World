@@ -13,4 +13,5 @@
     * [4.1 Math Analysis](4 Mathematic/4.1 Math Analysis/README.md)
     * [4.2 Linear Algebra](4 Mathematic/4.2 Linear Algebra/README.md)
 * [5 Algorithm](5 Algorithm/README.md)
+* [6 Tools](6 Tools/README.md)
 
