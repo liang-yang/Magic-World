@@ -1,0 +1,33 @@
+{
+    "plugins": [
+        "splitter",
+        "-sharing",
+        "expandable-chapters-small",
+        "search",
+        "search-pro",
+        "katex",
+        "ace",
+        "-anchor-navigation-ex",
+        "-atoc",
+        "simple-page-toc"
+    ],
+    "pluginsConfig": {
+        "search-pro": {
+            "cutWordLib": "nodejieba",
+            "defineWord": ["Gitbook Use"]
+        },
+        "simple-page-toc": {
+            "maxDepth": 3,
+            "skipFirstH1": true
+        },
+        "anchor-navigation-ex": {
+            "showLevel": false,
+            "associatedWithSummary": false,
+            "mode": "float"
+        },
+        "atoc": {
+            "addClass": true,
+            "className": "atoc"
+        }
+    }
+}
