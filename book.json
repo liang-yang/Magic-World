@@ -1,4 +1,15 @@
 {
+    "title": "Magic World",
+    "author": "magic",
+    "description": "Magic World",
+    "language": "en",
+    "styles": {
+        "website": "styles/website.css",
+        "ebook": "styles/ebook.css",
+        "pdf": "styles/pdf.css",
+        "mobi": "styles/mobi.css",
+        "epub": "styles/epub.css"
+    },
     "plugins": [
         "splitter",
         "-sharing",
@@ -7,14 +18,15 @@
         "search-pro",
         "katex",
         "ace",
-        "-anchor-navigation-ex",
-        "-atoc",
-        "simple-page-toc"
+        "simple-page-toc",
+        "anchor-navigation-ex"
     ],
     "pluginsConfig": {
         "search-pro": {
             "cutWordLib": "nodejieba",
-            "defineWord": ["Gitbook Use"]
+            "defineWord": [
+                "Gitbook Use"
+            ]
         },
         "simple-page-toc": {
             "maxDepth": 3,
@@ -23,11 +35,8 @@
         "anchor-navigation-ex": {
             "showLevel": false,
             "associatedWithSummary": false,
-            "mode": "float"
-        },
-        "atoc": {
-            "addClass": true,
-            "className": "atoc"
+            "mode": "float",
+            "multipleH1": false
         }
     }
 }

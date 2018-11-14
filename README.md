@@ -1,5 +1,2 @@
-# Magic-World
+# Introduction
 
-This is Magic World.
-
-Enjory~!
