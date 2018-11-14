@@ -1,10 +1,9 @@
 # Summary
 
-* [Introduction](README.md)
-* [1 Operating System](1 Operating System/README.md)
-* [2 Programming Language](2 Programming Language/README.md)
-  * [2.1 Java](2 Programming Language/2.1 Java/README.md)
-  * [2.2 Python](2 Programming Language/2.2 Python/README.md)
+### [1 Operating System](1 Operating System/README.md)
+### [2 Programming Language](2 Programming Language/README.md)
+  #### [2.1 Java](2 Programming Language/2.1 Java/README.md)
+  #### [2.2 Python](2 Programming Language/2.2 Python/README.md)
     * [2.2.1 statsmodels](2 Programming Language/2.2 Python/2.2.1 statsmodels.md)
 * [3 Database](3 Database/README.md)
   * [3.1 MySQL](3 Database/3.1 MySQL/README.md)
