@@ -1,0 +1,40 @@
+{
+    "title": "Magic-World",
+    "author": "magic",
+    "description": "Magic-World",
+    "language": "en",
+    "plugins": [
+        "splitter",
+        "-sharing",
+        "expandable-chapters",
+        "search",
+        "search-pro",
+        "katex",
+        "ace",
+        "simple-page-toc",
+        "anchor-navigation-ex"
+    ],
+    "pluginsConfig": {
+        "fontState": {
+            "size": "3",
+            "family": "Serif",
+            "theme": "Sepia"
+        },
+        "search-pro": {
+            "cutWordLib": "nodejieba",
+            "defineWord": [
+                "Gitbook Use"
+            ]
+        },
+        "simple-page-toc": {
+            "maxDepth": 3,
+            "skipFirstH1": true
+        },
+        "anchor-navigation-ex": {
+            "showLevel": false,
+            "associatedWithSummary": false,
+            "mode": "float",
+            "multipleH1": false
+        }
+    }
+}
