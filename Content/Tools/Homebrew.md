@@ -14,12 +14,6 @@ _**Homebrew is the easiest and most flexible way to install the UNIX tools Apple
 
 **_Check version of Homebrew._**
 
-```
-$ brew --version
-Homebrew 1.8.2
-Homebrew/homebrew-core (git revision 3df8; last commit 2018-11-13)
-```
-
 ### 1.2. brew update
 
 **_Fetch the newest version of Homebrew from GitHub._**
