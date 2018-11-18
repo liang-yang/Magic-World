@@ -16,7 +16,5 @@
     * [4.2. Python](Content/Programming Language/Python/README.md)
 * [5. Tools](Content/Tools/README.md)
     * [5.1. Git](Content/Tools/Git.md)
-    * [*5.2. GitBook](Content/Tools/GitBook.md)
-    * [5.3. Homebrew](Content/Tools/Homebrew.md)
-    * [*5.4. Jenkins](Content/Tools/Jenkins.md)
+    * [5.2. Homebrew](Content/Tools/Homebrew.md)
 
