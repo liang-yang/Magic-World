@@ -121,3 +121,9 @@ Command "checkout" can also be used to change branch, so in this scene, the coma
 ### 6.3. remote
 
 > **_Manage set of tracked repositories._**
+
+## 7. FAQ
+
+### 7.1. Set Chinese Log
+
+> **_git config --global core.quotepath false_**

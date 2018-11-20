@@ -9,6 +9,7 @@
   * [2.2. Time Series Analysis](Content/Algorithm/Time-Series-Analysis/README.md)
   * [2.3. Machine Learning](Content/Algorithm/Machine-Learning/README.md)
     * [2.3.1. 机器学习三要素](Content/Algorithm/Machine-Learning/机器学习三要素.md)
+    * [2.3.2. 分类模型的评估](Content/Algorithm/Machine-Learning/分类模型的评估.md)
 * [3. DataBase](Content/DataBase/README.md)
   * [3.1. MySQL](Content/DataBase/MySQL/README.md)
   * [3.2. OceanBase](Content/DataBase/OceanBase/README.md)
