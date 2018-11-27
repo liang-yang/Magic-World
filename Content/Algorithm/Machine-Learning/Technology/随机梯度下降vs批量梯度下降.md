@@ -21,7 +21,7 @@
 但是，当函数特别复杂时，求导为零很困难。例如：
 
 $$ 
-f(x, y) = x^3 - 2x^2 + e^{xy} - y^3 + 10y^2 + 100 \sin (xy) 
+\qquad f(x, y) = x^3 - 2x^2 + e^{xy} - y^3 + 10y^2 + 100 \sin (xy) 
 $$
 
 这个函数的求导为零就很难求解。由此，引入了 梯度下降 方法。
@@ -31,7 +31,7 @@ $$
 **梯度** 是 多元函数 对各个自变量偏导数形成的向量，定义为：
 
 $$
-\nabla f(x_1,x_2,...,x_k) = \bigg( \frac{\partial f}{\partial x_1},\frac{\partial f}{\partial x_2},...,\frac{\partial f}{\partial x_k} \bigg)^T
+\qquad \nabla f(x_1,x_2,...,x_k) = \bigg( \frac{\partial f}{\partial x_1},\frac{\partial f}{\partial x_2},...,\frac{\partial f}{\partial x_k} \bigg)^T
 $$
 
 其中 $$ \nabla $$ 称为梯度算子，它作用于一个多元函数，得到一个向量。 例如 $$ \nabla(x^2+xy-y^2) = (2x+y,x-2y) $$。
@@ -47,7 +47,7 @@ $$
 对于复杂的函数，我们可以通过 迭代法，从一个初始点 $$ x_0 $$，反复使用某种规则从 $$ x_{k} $$ 移动到下一个点 $$ x_{k+1} $$，即
 
 $$
-x_{k+1} = h(x_{k})
+\qquad x_{k+1} = h(x_{k})
 $$
 
 那么，具体的迭代规则是什么呢？
@@ -55,25 +55,25 @@ $$
 我们将多元函数 $$ f(x) $$ 在 $$ x_0 $$ 点处泰勒展开，有：
 
 $$
-f(x_0 + \Delta x) = f(x_0) + \big( \nabla f(x_0) \big)^T \Delta x + \omicron ( \Delta x )
+\qquad f(x_0 + \Delta x) = f(x_0) + \big( \nabla f(x_0) \big)^T \Delta x + \omicron ( \Delta x )
 $$
 
 当 $$ \Delta x $$ 足够小时，我们可以忽略高次项 $$ \omicron ( \Delta x ) $$，可以得到：
 
 $$
-f(x_0 + \Delta x) - f(x_0) \approx \big( \nabla f(x) \big)^T \Delta x
+\qquad f(x_0 + \Delta x) - f(x_0) \approx \big( \nabla f(x) \big)^T \Delta x
 $$
 
 假设我们现在要求 极小值（求极大值可以转化为求极小值），则需要令函数递减：
 
 $$
-f(x_0 + \Delta x) - f(x_0) \approx \big( \nabla f(x) \big)^T \Delta x \leqslant 0
+\qquad f(x_0 + \Delta x) - f(x_0) \approx \big( \nabla f(x) \big)^T \Delta x \leqslant 0
 $$
 
 即
 
 $$
-\big( \nabla f(x) \big)^T \Delta x = || \big( \nabla f(x) \big)^T || \cdot || \Delta x || \cdot \cos \theta \leqslant 0
+\qquad \big( \nabla f(x) \big)^T \Delta x = || \big( \nabla f(x) \big)^T || \cdot || \Delta x || \cdot \cos \theta \leqslant 0
 $$
 
 其中，$$ \theta $$ 是向量 $$ \big( \nabla f(x) \big)^T $$ 和 $$ \Delta x $$ 的夹角。 那么，只要 $$ \cos \theta \leqslant 0 $$ 即可。 
@@ -81,7 +81,7 @@ $$
 特别的，在 $$ \theta = \pi $$，即向量 $$ \Delta x $$ 与梯度 $$ \big( \nabla f(x) \big)^T $$ 反向时，$$ \cos \theta = -1 $$，就可以更快的朝极小值移动。因此，我们令
 
 $$ 
-\Delta x = - \eta \cdot \big( \nabla f(x) \big)^T 
+\qquad \Delta x = - \eta \cdot \big( \nabla f(x) \big)^T 
 $$
 
 则必有 $$ \cos \theta = -1 $$。其中，$$ \eta $$ 我们称之为 步长，以此控制 $$ \Delta x $$ 足够小。
