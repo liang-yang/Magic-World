@@ -10,7 +10,7 @@
     * [2.3. Machine Learning](Content/Algorithm/Machine-Learning/README.md)
         * [2.3.1. Technology](Content/Algorithm/Machine-Learning/Technology/README.md)
             * [2.3.1.1 机器学习三要素](Content/Algorithm/Machine-Learning/Technology/机器学习三要素.md)
-            * [2.3.1.2 随机梯度下降 vs 批量梯度下降](Content/Algorithm/Machine-Learning/Technology/随机梯度下降vs批量梯度下降.md)
+            * [2.3.1.2 梯度下降(Gradient Descent)](Content/Algorithm/Machine-Learning/Technology/梯度下降.md)
         * [2.3.2. Classification](Content/Algorithm/Machine-Learning/Classification/README.md)
             * [2.3.2.1 分类模型的评估](Content/Algorithm/Machine-Learning/Classification/分类模型的评估.md)
             * [2.3.2.2 感知机(Perceptron)](Content/Algorithm/Machine-Learning/Classification/感知机.md)
