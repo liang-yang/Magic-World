@@ -29,6 +29,7 @@
     * [4.1. Python](Content/Programming-Language/Python/README.md)
         * [4.1.1 Scikit-Learn](Content/Programming-Language/Python/Scikit-Learn/README.md)
             * [4.1.1.1 * Datasets](Content/Programming-Language/Python/Scikit-Learn/Datasets.md)
+            * [4.1.1.2 * Linear Model](Content/Programming-Language/Python/Scikit-Learn/Linear-Model.md)
     * [4.2. Java](Content/Programming-Language/Java/README.md)
 * [5. Tools](Content/Tools/README.md)
     * [5.1 - Git](Content/Tools/Git.md)
