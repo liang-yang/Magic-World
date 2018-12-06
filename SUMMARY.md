@@ -11,6 +11,7 @@
         * [2.3.1. Technology](Content/Algorithm/Machine-Learning/Technology/README.md)
             * [2.3.1.1 - 机器学习三要素.md](Content/Algorithm/Machine-Learning/Technology/机器学习三要素.md)
             * [2.3.1.2 - 梯度下降(Gradient Descent).md](Content/Algorithm/Machine-Learning/Technology/梯度下降.md)
+            * [2.3.1.3 - 中心化 vs 归一化 vs 标准化.md](Content/Algorithm/Machine-Learning/Technology/中心化_归一化_标准化.md)
         * [2.3.2. Regression](Content/Algorithm/Machine-Learning/Regression/README.md)
             * [2.3.2.1 * 线性回归(Linear Regression).md](Content/Algorithm/Machine-Learning/Regression/线性回归.md)
             * [2.3.2.2 * 岭回归(Ridge Regression).md](Content/Algorithm/Machine-Learning/Regression/岭回归.md)
