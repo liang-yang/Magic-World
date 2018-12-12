@@ -30,7 +30,7 @@ n_iter | None | 迭代的轮数 | 0.21版本将会删除
 
 ## 2. Attributes
 
-Parameter | Comment | Tips
+Parameter | Comment | Note
 :-:|:-:|:-:
 coef_ | 生成的样本集 | -
 intercept_ | 生成的样本集 | -
