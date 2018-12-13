@@ -32,7 +32,7 @@
         * [3.1.1. Scikit-Learn](Content/Programming-Language/Python/Scikit-Learn/README.md)
             * [3.1.1.1. Datasets](Content/Programming-Language/Python/Scikit-Learn/Datasets/README.md)
                 * [3.1.1.1.1 - Loaders.md](Content/Programming-Language/Python/Scikit-Learn/Datasets/Loaders.md)
-                * [3.1.1.1.2 * Fetchers.md](Content/Programming-Language/Python/Scikit-Learn/Datasets/Fetchers.md)
+                * [3.1.1.1.2 - Fetchers.md](Content/Programming-Language/Python/Scikit-Learn/Datasets/Fetchers.md)
                 * [3.1.1.1.3 * Generations.md](Content/Programming-Language/Python/Scikit-Learn/Datasets/Generations.md)
             * [3.1.1.2. Feature Extraction](Content/Programming-Language/Python/Scikit-Learn/Feature-Extraction/README.md)
             * [3.1.1.3. Feature Selection](Content/Programming-Language/Python/Scikit-Learn/Feature-Selection/README.md)

@@ -4,9 +4,52 @@
 
 ---
 
-## 1. make_classification
+## 1. classification and clustering
 
-[sklearn.datasets.make_classification](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html#sklearn.datasets.make_classification)
+### 1.1. make-blobs
+
+[sklearn.datasets.make_blobs](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_blobs.html)
+
+Parameters | Data-Type | Default | Comment | Note
+:-:|:-:|:-:|:-:|:-:
+n_samples | int, array | 100 | 如果为int，表示样本总数，会在各集群中平均分配；如果为array，表示各个集群的样本数量 | -
+n_features | int | 2 | 每样本的特征数量 | -
+centers | int, array[n_centers,n_features] | None | - | -
+cluster_std | float, sequence of floats | 1.0 | 集群的标准差 | -
+center_box | pair of floats (min,max) | (-10.0,10.0) | 每个集群均值的边界范围 | -
+
+
+
+### 1.2. make-classification
+
+
+### 1.3. make_gaussian_quantiles
+
+
+### 1.4. make_hastie_10_2
+
+
+### 1.5. make_circles 
+
+
+### 1.6. make_moons
+
+
+### 1.7. make_multilabel_classification
+
+
+### 1.8. make_biclusters
+
+
+### 1.9. make_checkerboard
+
+
+
+
+
+## 1. classification
+
+[sklearn.datasets.make_classification](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_classification.html)
 
 make_classification 可以随机生成一个N分类的数据集，其生成分类数据的方式是借助于超立方体（hypercube），步骤如下：
 
