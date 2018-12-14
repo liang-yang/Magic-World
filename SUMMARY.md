@@ -1,6 +1,6 @@
 # Summary
 
-* [Magic World](README.md)
+* [Remark](README.md)
 * [1. Mathematic](Content/Mathematic/README.md)
     * [1.1. Math Analysis](Content/Mathematic/Math-Analysis/README.md)
     * [1.2. Linear Algebra](Content/Mathematic/Linear-Algebra/README.md)
@@ -53,5 +53,3 @@
 * [5. Tools](Content/Tools/README.md)
     * [5.1 - Git.md](Content/Tools/Git.md)
     * [5.2 - Homebrew.md](Content/Tools/Homebrew.md)
-* [Remark](Content/Remark.md)
-
