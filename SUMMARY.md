@@ -29,7 +29,7 @@
             * [2.3.6.1 - 特征缩放(Feature Scaling).md](Content/Algorithm/Machine-Learning/Preprocessing/特征缩放.md)
 * [3. Programming Language](Content/Programming-Language/README.md)
     * [3.1. Python](Content/Programming-Language/Python/README.md)
-        * [3.1.1. Scikit-Learn](Content/Programming-Language/Python/Scikit-Learn/README.md)
+        * [3.1.1. Scikit-Learn v0.20.1](Content/Programming-Language/Python/Scikit-Learn/README.md)
             * [3.1.1.1. Datasets](Content/Programming-Language/Python/Scikit-Learn/Datasets/README.md)
                 * [3.1.1.1.1 - Loaders.md](Content/Programming-Language/Python/Scikit-Learn/Datasets/Loaders.md)
                 * [3.1.1.1.2 - Fetchers.md](Content/Programming-Language/Python/Scikit-Learn/Datasets/Fetchers.md)
@@ -53,4 +53,5 @@
 * [5. Tools](Content/Tools/README.md)
     * [5.1 - Git.md](Content/Tools/Git.md)
     * [5.2 - Homebrew.md](Content/Tools/Homebrew.md)
+* [Remark](Content/Remark.md)
 
