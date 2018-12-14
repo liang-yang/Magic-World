@@ -4,7 +4,7 @@
 
 ---
 
-## 1. classification and clustering
+## 1. Classification and Clustering
 
 分类 和 聚类 在数据集层面都是一样的，都是将整个数据集分离为多个数据集群，因此这里将两者归为一类。
 
@@ -179,6 +179,86 @@ plt.show()
 
 ### 1.9. make-checkerboard
 
+
+## 2. Regression
+
+### 2.1. make-regression
+
+[sklearn.datasets.make_regression](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_regression.html)
+
+Parameters | Data-Type | Default | Comment | Note
+:-:|:-:|:-:|:-:|:-:
+n_samples | int | 100 | 总样本数量 | -
+n_features | int | 100 | 总特征数量 | -
+n_informative | int | 10 | 有用的特征数量 | -
+n_targets | int | 1 | 输出的回归值的维度数量，默认为1，即标量 | -
+bias | float | 0.0 | 偏差项 | -
+effective_rank | int | None |  | -
+tail_strength | float[0,1] | 0.5 |  | -
+noise | float | 0.0 | 噪音的标准差 | -
+coef | boolean | False | 是否返回系数 | -
+
+Returns | Data-Type | Comment | Note
+:-:|:-:|:-:|:-:
+X | array[n_samples,n_features] |  | -
+y | array[n_samples,n_targets] |  | -
+coef | array[n_features,n_targets] |  | -
+ 
+{%ace edit=true, lang='python'%}
+
+{%endace%}
+
+### 2.2. make-sparse-uncorrelated
+
+
+
+
+
+### 2.3. make_friedman1
+
+
+
+
+
+### 2.4. make_friedman2
+
+
+
+
+
+### 2.5. make_friedman3
+
+
+
+
+## 3. Manifold
+
+### 3.1. make-s-curve
+
+
+### 3.2. make-swiss-roll
+
+
+
+## 4. Decomposition
+
+### 4.1. make-low-rank-matrix
+
+
+
+
+
+### 4.2. make-sparse-coded-signal
+
+
+
+
+### 4.3. make-spd-matrix
+
+
+
+
+### 4.4. make-sparse-spd-matrix
 
 
 
