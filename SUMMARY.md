@@ -31,7 +31,7 @@
             * [I - Loaders](Content/Python/Scikit-Learn/Datasets/Loaders.md)
             * [II - Fetchers](Content/Python/Scikit-Learn/Datasets/Fetchers.md)
             * [III * Generations](Content/Python/Scikit-Learn/Datasets/Generations.md)
-            * [IV * Other Datasets](Content/Python/Scikit-Learn/Datasets/Other_Datasets.md)
+            * [IV - Other Datasets](Content/Python/Scikit-Learn/Datasets/Other_Datasets.md)
         * [5.1.2. Preprocessing](Content/Python/Scikit-Learn/Preprocessing/README.md)
             * [5.1.2.1. Preprocessing](Content/Python/Scikit-Learn/Preprocessing/Preprocessing/README.md)
             * [5.1.2.2. Feature Extraction](Content/Python/Scikit-Learn/Preprocessing/Feature-Extraction/README.md)

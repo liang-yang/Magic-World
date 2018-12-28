@@ -244,7 +244,7 @@ coef | array[n_features,n_targets] |  | -
 
 ### 4.1. make-low-rank-matrix
 
-
+https://zhidao.baidu.com/question/172378440.html
 
 
 

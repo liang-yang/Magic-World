@@ -12,7 +12,7 @@ Datasets 提供 三 种数据集接口：Loaders、Fetchers 和 Generations。
 
 他们都会返回：
 
-- X: array[n_samples * n_features]
+- X: array[n_samples, n_features]
 - y: array[n_samples]
 
 对于 Loaders 和 Fetchers，还可以通过 **DESCR** 获取 特征列表。
