@@ -1,0 +1,1154 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>I - 特征转化(Feature Convert) · Magic-World</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="magic">
+        
+        
+    
+    <link rel="stylesheet" href="../../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="特征哈希.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../../">
+            
+                <a href="../../../../">
+            
+                    
+                    Remark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../Mathematic/">
+            
+                <a href="../../../Mathematic/">
+            
+                    
+                    1. Mathematic
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../../Mathematic/Math-Analysis/">
+            
+                <a href="../../../Mathematic/Math-Analysis/">
+            
+                    
+                    1.1. Math Analysis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../../Mathematic/Linear-Algebra/">
+            
+                <a href="../../../Mathematic/Linear-Algebra/">
+            
+                    
+                    1.2. Linear Algebra
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../Statistics/">
+            
+                <a href="../../../Statistics/">
+            
+                    
+                    2. Statistics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../Time-Series-Analysis/">
+            
+                <a href="../../../Time-Series-Analysis/">
+            
+                    
+                    3. Time Series Analysis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    4. Machine Learning
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../Technology/">
+            
+                <a href="../../Technology/">
+            
+                    
+                    4.1. Technology
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../Technology/机器学习三要素.html">
+            
+                <a href="../../Technology/机器学习三要素.html">
+            
+                    
+                    I - 机器学习三要素
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2" data-path="../../Technology/梯度下降.html">
+            
+                <a href="../../Technology/梯度下降.html">
+            
+                    
+                    II - 梯度下降(Gradient Descent)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    4.2. Preprocessing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    4.2.1. Feature Extraction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.2.1.1" data-path="特征转化.html">
+            
+                <a href="特征转化.html">
+            
+                    
+                    I - 特征转化(Feature Convert)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.1.2" data-path="特征哈希.html">
+            
+                <a href="特征哈希.html">
+            
+                    
+                    II - 特征哈希(Feature Hashing)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.1.3" data-path="文本特征提取.html">
+            
+                <a href="文本特征提取.html">
+            
+                    
+                    III * 文本特征提取(Text Feature Extraction)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.1.4" data-path="图片特征提取.html">
+            
+                <a href="图片特征提取.html">
+            
+                    
+                    IV * 图片特征提取(Image Feature Extraction)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.1.5" data-path="稀疏矩阵存储.html">
+            
+                <a href="稀疏矩阵存储.html">
+            
+                    
+                    V - 稀疏矩阵存储（CSR）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../Preprocessing/">
+            
+                <a href="../Preprocessing/">
+            
+                    
+                    4.2.2. Preprocessing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.2.1" data-path="../Preprocessing/特征缩放.html">
+            
+                <a href="../Preprocessing/特征缩放.html">
+            
+                    
+                    I - 特征缩放(Feature Scaling)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../Dimensionality-Reduction/">
+            
+                <a href="../../Dimensionality-Reduction/">
+            
+                    
+                    4.3. Dimensionality Reduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../Model-Selection/">
+            
+                <a href="../../Model-Selection/">
+            
+                    
+                    4.4. Model Selection
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../../Model-Selection/Grid-Search/">
+            
+                <a href="../../Model-Selection/Grid-Search/">
+            
+                    
+                    4.4.1. Grid Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.2" data-path="../../Model-Selection/Cross-Validation/">
+            
+                <a href="../../Model-Selection/Cross-Validation/">
+            
+                    
+                    4.4.2. Cross Validation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4.3" data-path="../../Model-Selection/Metrics/">
+            
+                <a href="../../Model-Selection/Metrics/">
+            
+                    
+                    4.4.3. Metrics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../Classification/">
+            
+                <a href="../../Classification/">
+            
+                    
+                    4.5. Classification
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.5.1" data-path="../../Classification/分类模型的评估.html">
+            
+                <a href="../../Classification/分类模型的评估.html">
+            
+                    
+                    I - 分类模型的评估
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5.2" data-path="../../Classification/感知机.html">
+            
+                <a href="../../Classification/感知机.html">
+            
+                    
+                    II * 感知机(Perceptron)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../Regression/">
+            
+                <a href="../../Regression/">
+            
+                    
+                    4.6. Regression
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.6.1" data-path="../../Regression/线性回归.html">
+            
+                <a href="../../Regression/线性回归.html">
+            
+                    
+                    I * 线性回归(Linear Regression)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../Clustering/">
+            
+                <a href="../../Clustering/">
+            
+                    
+                    4.7. Clustering
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../../Python/">
+            
+                <a href="../../../Python/">
+            
+                    
+                    5. Python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../../Python/Scikit-Learn/">
+            
+                <a href="../../../Python/Scikit-Learn/">
+            
+                    
+                    5.1. Scikit-Learn v0.20.1
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../../../Python/Scikit-Learn/Datasets/">
+            
+                <a href="../../../Python/Scikit-Learn/Datasets/">
+            
+                    
+                    5.1.1. Datasets
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1.1" data-path="../../../Python/Scikit-Learn/Datasets/Loaders.html">
+            
+                <a href="../../../Python/Scikit-Learn/Datasets/Loaders.html">
+            
+                    
+                    I - Loaders
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.1.2" data-path="../../../Python/Scikit-Learn/Datasets/Fetchers.html">
+            
+                <a href="../../../Python/Scikit-Learn/Datasets/Fetchers.html">
+            
+                    
+                    II - Fetchers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.1.3" data-path="../../../Python/Scikit-Learn/Datasets/Generations.html">
+            
+                <a href="../../../Python/Scikit-Learn/Datasets/Generations.html">
+            
+                    
+                    III * Generations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.1.4" data-path="../../../Python/Scikit-Learn/Datasets/Other_Datasets.html">
+            
+                <a href="../../../Python/Scikit-Learn/Datasets/Other_Datasets.html">
+            
+                    
+                    IV - Other Datasets
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2" data-path="../../../Python/Scikit-Learn/Preprocessing/">
+            
+                <a href="../../../Python/Scikit-Learn/Preprocessing/">
+            
+                    
+                    5.1.2. Preprocessing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.2.1" data-path="../../../Python/Scikit-Learn/Preprocessing/Feature_Extraction.html">
+            
+                <a href="../../../Python/Scikit-Learn/Preprocessing/Feature_Extraction.html">
+            
+                    
+                    I * Feature Extraction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.2.2" data-path="../../../Python/Scikit-Learn/Preprocessing/Preprocessing.html">
+            
+                <a href="../../../Python/Scikit-Learn/Preprocessing/Preprocessing.html">
+            
+                    
+                    II * Preprocessing
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.3" data-path="../../../Python/Scikit-Learn/Dimensionality-Reduction/">
+            
+                <a href="../../../Python/Scikit-Learn/Dimensionality-Reduction/">
+            
+                    
+                    5.1.3. Dimensionality Reduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.4" data-path="../../../Python/Scikit-Learn/Model-Selection/">
+            
+                <a href="../../../Python/Scikit-Learn/Model-Selection/">
+            
+                    
+                    5.1.4. Model Selection
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.4.1" data-path="../../../Python/Scikit-Learn/Model-Selection/Grid-Search/">
+            
+                <a href="../../../Python/Scikit-Learn/Model-Selection/Grid-Search/">
+            
+                    
+                    5.1.4.1. Grid Search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.4.2" data-path="../../../Python/Scikit-Learn/Model-Selection/Cross-Validation/">
+            
+                <a href="../../../Python/Scikit-Learn/Model-Selection/Cross-Validation/">
+            
+                    
+                    5.1.4.2. Cross Validation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.4.3" data-path="../../../Python/Scikit-Learn/Model-Selection/Metrics/">
+            
+                <a href="../../../Python/Scikit-Learn/Model-Selection/Metrics/">
+            
+                    
+                    5.1.4.3. Metrics
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.5" data-path="../../../Python/Scikit-Learn/Classification/">
+            
+                <a href="../../../Python/Scikit-Learn/Classification/">
+            
+                    
+                    5.1.5. Classification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.6" data-path="../../../Python/Scikit-Learn/Regression/">
+            
+                <a href="../../../Python/Scikit-Learn/Regression/">
+            
+                    
+                    5.1.6. Regression
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.1.7" data-path="../../../Python/Scikit-Learn/Clustering/">
+            
+                <a href="../../../Python/Scikit-Learn/Clustering/">
+            
+                    
+                    5.1.7. Clustering
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../../DataBase/">
+            
+                <a href="../../../DataBase/">
+            
+                    
+                    6. DataBase
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../../DataBase/MySQL/">
+            
+                <a href="../../../DataBase/MySQL/">
+            
+                    
+                    6.1. MySQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../../../DataBase/OceanBase/">
+            
+                <a href="../../../DataBase/OceanBase/">
+            
+                    
+                    6.2. OceanBase
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../../Tools/">
+            
+                <a href="../../../Tools/">
+            
+                    
+                    7. Tools
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../../../Tools/Git.html">
+            
+                <a href="../../../Tools/Git.html">
+            
+                    
+                    I - Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../../../Tools/Homebrew.html">
+            
+                <a href="../../../Tools/Homebrew.html">
+            
+                    
+                    II - Homebrew
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../../.." >I - 特征转化(Feature Convert)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x7279;&#x5F81;&#x8F6C;&#x5316;feature-convert"><b></b>&#x7279;&#x5F81;&#x8F6C;&#x5316;(Feature Convert)</a></li><ul><li><span class="title-icon "></span><a href="#1-&#x8FDE;&#x7EED;&#x7279;&#x5F81;"><b></b>1. &#x8FDE;&#x7EED;&#x7279;&#x5F81;</a></li><li><span class="title-icon "></span><a href="#2-&#x65E0;&#x5E8F;&#x7C7B;&#x522B;&#x7279;&#x5F81;"><b></b>2. &#x65E0;&#x5E8F;&#x7C7B;&#x522B;&#x7279;&#x5F81;</a></li><li><span class="title-icon "></span><a href="#3-&#x6709;&#x5E8F;&#x7C7B;&#x522B;&#x7279;&#x5F81;"><b></b>3. &#x6709;&#x5E8F;&#x7C7B;&#x522B;&#x7279;&#x5F81;</a></li></ul></ul></div><a href="#&#x7279;&#x5F81;&#x8F6C;&#x5316;feature-convert" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><!-- toc -->
+<ul>
+<li><a href="#&#x7279;&#x5F81;&#x8F6C;&#x5316;feature-convert">&#x7279;&#x5F81;&#x8F6C;&#x5316;(Feature Convert)</a><ul>
+<li><a href="#1-&#x8FDE;&#x7EED;&#x7279;&#x5F81;">1. &#x8FDE;&#x7EED;&#x7279;&#x5F81;</a></li>
+<li><a href="#2-&#x65E0;&#x5E8F;&#x7C7B;&#x522B;&#x7279;&#x5F81;">2. &#x65E0;&#x5E8F;&#x7C7B;&#x522B;&#x7279;&#x5F81;</a></li>
+<li><a href="#3-&#x6709;&#x5E8F;&#x7C7B;&#x522B;&#x7279;&#x5F81;">3. &#x6709;&#x5E8F;&#x7C7B;&#x522B;&#x7279;&#x5F81;</a></li>
+</ul>
+</li>
+</ul>
+<!-- tocstop -->
+<h1 id="&#x7279;&#x5F81;&#x8F6C;&#x5316;feature-convert"><a name="&#x7279;&#x5F81;&#x8F6C;&#x5316;feature-convert" class="anchor-navigation-ex-anchor" href="#&#x7279;&#x5F81;&#x8F6C;&#x5316;feature-convert"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7279;&#x5F81;&#x8F6C;&#x5316;(Feature Convert)</h1>
+<hr>
+<p><a href="http://breezedeus.github.io/2014/11/15/breezedeus-feature-processing.html" target="_blank">&#x7279;&#x5F81;&#x5904;&#x7406;&#xFF08;Feature Processing&#xFF09;</a></p>
+<p>&#x7279;&#x5F81;&#x8F6C;&#x5316;&#xFF0C;&#x662F;&#x6307;&#x5C06;&#x7279;&#x5F81;&#x503C;&#x7531; &#x4FBF;&#x4E8E;&#x903B;&#x8F91;&#x7406;&#x89E3; &#x7684;&#x5B58;&#x50A8;&#x683C;&#x5F0F;&#x8F6C;&#x5316;&#x4E3A; &#x4FBF;&#x4E8E;&#x673A;&#x5668;&#x5B66;&#x4E60; &#x7684;&#x5B58;&#x50A8;&#x683C;&#x5F0F;&#x3002;</p>
+<p>&#x7279;&#x5F81; &#x901A;&#x5E38;&#x5C5E;&#x4E8E;&#x5982;&#x4E0B;&#x4E09;&#x7C7B;&#xFF1A;</p>
+<ul>
+<li>&#x8FDE;&#x7EED;&#xFF08;continuous&#xFF09;&#x7279;&#x5F81;</li>
+<li>&#x65E0;&#x5E8F;&#x7C7B;&#x522B;&#xFF08;categorical&#xFF09;&#x7279;&#x5F81;</li>
+<li>&#x6709;&#x5E8F;&#x7C7B;&#x522B;&#xFF08;ordinal&#xFF09;&#x7279;&#x5F81;</li>
+</ul>
+<h2 id="1-&#x8FDE;&#x7EED;&#x7279;&#x5F81;"><a name="1-&#x8FDE;&#x7EED;&#x7279;&#x5F81;" class="anchor-navigation-ex-anchor" href="#1-&#x8FDE;&#x7EED;&#x7279;&#x5F81;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x8FDE;&#x7EED;&#x7279;&#x5F81;</h2>
+<p>&#x5BF9;&#x4E8E; &#x8FDE;&#x7EED; &#x7279;&#x5F81;&#xFF0C;&#x5176;&#x5B58;&#x50A8;&#x683C;&#x5F0F;&#x65E0;&#x8BBA;&#x662F; &#x903B;&#x8F91;&#x7406;&#x89E3; &#x8FD8;&#x662F; &#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x90FD;&#x6BD4;&#x8F83;&#x4E00;&#x81F4;&#xFF0C;&#x56E0;&#x6B64;&#x4E00;&#x822C;&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x4EC0;&#x4E48;&#x8F6C;&#x5316;&#xFF08;&#x6211;&#x4EEC;&#x5C06; &#x5F52;&#x4E00;&#x5316; &#x5904;&#x7406;&#x5F52;&#x4E3A;&#x9884;&#x5904;&#x7406;&#xFF0C;&#x4E0D;&#x7B97;&#x4F5C;&#x7279;&#x5F81;&#x8F6C;&#x5316;&#xFF09;&#x3002;</p>
+<h2 id="2-&#x65E0;&#x5E8F;&#x7C7B;&#x522B;&#x7279;&#x5F81;"><a name="2-&#x65E0;&#x5E8F;&#x7C7B;&#x522B;&#x7279;&#x5F81;" class="anchor-navigation-ex-anchor" href="#2-&#x65E0;&#x5E8F;&#x7C7B;&#x522B;&#x7279;&#x5F81;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x65E0;&#x5E8F;&#x7C7B;&#x522B;&#x7279;&#x5F81;</h2>
+<p>&#x65E0;&#x5E8F;&#x7279;&#x5F81;&#xFF0C;&#x4F8B;&#x5982;&#x7279;&#x5F81; color&#xFF0C;&#x6709;&#x4E09;&#x79CD;&#x53D6;&#x503C;&#xFF1A;red&#x3001;green&#x3001;blue&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x903B;&#x8F91;&#x4E0A;&#x5BF9;&#x7279;&#x5F81;&#x8FDB;&#x884C;&#x63CF;&#x8FF0;&#x7684;&#x683C;&#x5F0F;&#x3002;&#x5728;&#x5E38;&#x89C4;&#x6570;&#x636E;&#x5904;&#x7406;&#x4E2D;&#xFF0C;&#x4E3A;&#x4E86;&#x4FBF;&#x4E8E;&#x5B58;&#x50A8;&#x53CA;&#x5904;&#x7406;&#xFF0C;&#x6211;&#x4EEC;&#x5E38;&#x5E38;&#x4F1A;&#x5C06; &#x5B57;&#x7B26;&#x4E32; &#x4E0E; &#x6570;&#x5B57; &#x4E00;&#x4E00;&#x6620;&#x5C04;&#xFF0C;&#x5373;&#x4F7F;&#x5F97; red=1&#x3001;green=2&#x3001;blue=3&#x3002;</p>
+<p>&#x4F46;&#x662F;&#xFF0C;&#x8FD9;&#x79CD;&#x8F6C;&#x6362;&#x65B9;&#x5F0F;&#x4F1A;&#x4F7F;&#x5F97;&#x5404;&#x53D6;&#x503C;&#x4E4B;&#x95F4;&#x53EF;&#x6BD4;&#x8F83;&#x5927;&#x5C0F;&#x3001;&#x751A;&#x81F3;&#x53EF;&#x8FDB;&#x884C;&#x8FD0;&#x7B97;&#xFF0C;&#x4F8B;&#x5982; 1 + 2 = 3 &#x4F1A;&#x4F7F;&#x5F97; red + green = blue&#x3002;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x662F;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x79CD;&#x8FD0;&#x7B97;&#x5173;&#x7CFB;&#x7684;&#x3002;&#x57FA;&#x4E8E;&#x4EE5;&#x4E0A;&#x539F;&#x56E0;&#xFF0C;&#x5728;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x4E2D;&#xFF0C;&#x5BF9;&#x65E0;&#x5E8F;&#x7279;&#x5F81;&#x7684;&#x8F6C;&#x5316;&#x4E00;&#x822C;&#x4F7F;&#x7528; One-hot&#xFF08;One-of-k&#xFF09;&#x5C06;&#x53D6;&#x503C;&#x8F6C;&#x5316;&#x4E3A;&#x4E00;&#x4E2A;&#x6570;&#x503C;&#x5411;&#x91CF;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">color</th>
+<th style="text-align:center">vector </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><em>red</em></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn><mo separator="true">,</mo><mn>0</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(1,0,0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">0</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:center"><em>green</em></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(0,1,0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">0</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:center"><em>blue</em></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(0,0,1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD9;&#x79CD;&#x65B9;&#x6CD5;&#x5728;NLP&#x91CC;&#x7528;&#x7684;&#x5F88;&#x591A;&#xFF0C;&#x5C31;&#x662F;&#x6240;&#x8C13;&#x7684;&#x8BCD;&#x5411;&#x91CF;&#x6A21;&#x578B;&#x3002;&#x53D8;&#x6362;&#x540E;&#x7684;&#x5411;&#x91CF;&#x957F;&#x5EA6;&#x5BF9;&#x4E8E;&#x8BCD;&#x5178;&#x957F;&#x5EA6;&#xFF0C;&#x6BCF;&#x4E2A;&#x8BCD;&#x5BF9;&#x5E94;&#x4E8E;&#x5411;&#x91CF;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x3002;</p>
+<h2 id="3-&#x6709;&#x5E8F;&#x7C7B;&#x522B;&#x7279;&#x5F81;"><a name="3-&#x6709;&#x5E8F;&#x7C7B;&#x522B;&#x7279;&#x5F81;" class="anchor-navigation-ex-anchor" href="#3-&#x6709;&#x5E8F;&#x7C7B;&#x522B;&#x7279;&#x5F81;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x6709;&#x5E8F;&#x7C7B;&#x522B;&#x7279;&#x5F81;</h2>
+<p>&#x5BF9;&#x4E8E;&#x6709;&#x5E8F;&#x7279;&#x5F81;&#xFF0C;&#x53D6;&#x503C;&#x4E4B;&#x95F4;&#x5B58;&#x5728;&#x4E00;&#x5B9A;&#x7684;&#x5927;&#x5C0F;&#x5173;&#x7CFB;&#xFF0C;&#x4F46;&#x4E0D;&#x5B58;&#x5728;&#x8FD0;&#x7B97;&#x5173;&#x7CFB;&#xFF0C;&#x56E0;&#x6B64;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x65B9;&#x5F0F;&#x8868;&#x793A;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">status</th>
+<th style="text-align:center">vector </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><em>bad</em></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn><mo separator="true">,</mo><mn>0</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(1,0,0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">0</span><span class="mpunct">,</span><span class="mord mathrm">0</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:center"><em>normal</em></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(1,1,0)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">0</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td style="text-align:center"><em>good</em></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(1,1,1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base textstyle uncramped"><span class="mopen">(</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mpunct">,</span><span class="mord mathrm">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD9;&#x6837;&#x5C31;&#x5229;&#x7528;&#x9012;&#x8FDB;&#x8868;&#x8FBE;&#x4E86;&#x503C;&#x4E4B;&#x95F4;&#x7684;&#x987A;&#x5E8F;&#x5173;&#x7CFB;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 4.2.1. Feature Extraction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="特征哈希.html" class="navigation navigation-next " aria-label="Next page: II - 特征哈希(Feature Hashing)">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"I - 特征转化(Feature Convert)","level":"1.5.2.1.1","depth":4,"next":{"title":"II - 特征哈希(Feature Hashing)","level":"1.5.2.1.2","depth":4,"path":"Content/Machine-Learning/Preprocessing/Feature-Extraction/特征哈希.md","ref":"Content/Machine-Learning/Preprocessing/Feature-Extraction/特征哈希.md","articles":[]},"previous":{"title":"4.2.1. Feature Extraction","level":"1.5.2.1","depth":3,"path":"Content/Machine-Learning/Preprocessing/Feature-Extraction/README.md","ref":"Content/Machine-Learning/Preprocessing/Feature-Extraction/README.md","articles":[{"title":"I - 特征转化(Feature Convert)","level":"1.5.2.1.1","depth":4,"path":"Content/Machine-Learning/Preprocessing/Feature-Extraction/特征转化.md","ref":"Content/Machine-Learning/Preprocessing/Feature-Extraction/特征转化.md","articles":[]},{"title":"II - 特征哈希(Feature Hashing)","level":"1.5.2.1.2","depth":4,"path":"Content/Machine-Learning/Preprocessing/Feature-Extraction/特征哈希.md","ref":"Content/Machine-Learning/Preprocessing/Feature-Extraction/特征哈希.md","articles":[]},{"title":"III * 文本特征提取(Text Feature Extraction)","level":"1.5.2.1.3","depth":4,"path":"Content/Machine-Learning/Preprocessing/Feature-Extraction/文本特征提取.md","ref":"Content/Machine-Learning/Preprocessing/Feature-Extraction/文本特征提取.md","articles":[]},{"title":"IV * 图片特征提取(Image Feature Extraction)","level":"1.5.2.1.4","depth":4,"path":"Content/Machine-Learning/Preprocessing/Feature-Extraction/图片特征提取.md","ref":"Content/Machine-Learning/Preprocessing/Feature-Extraction/图片特征提取.md","articles":[]},{"title":"V - 稀疏矩阵存储（CSR）","level":"1.5.2.1.5","depth":4,"path":"Content/Machine-Learning/Preprocessing/Feature-Extraction/稀疏矩阵存储.md","ref":"Content/Machine-Learning/Preprocessing/Feature-Extraction/稀疏矩阵存储.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["splitter","-sharing","expandable-chapters","search","search-pro","katex","ace","simple-page-toc","anchor-navigation-ex","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontState":{"size":"3","family":"Serif","theme":"Sepia"},"ace":{},"livereload":{},"simple-page-toc":{"maxDepth":3,"skipFirstH1":true},"splitter":{},"search-pro":{"cutWordLib":"nodejieba","defineWord":["Gitbook Use"]},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"magic","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Magic-World","language":"en","gitbook":"*","description":"Magic-World"},"file":{"path":"Content/Machine-Learning/Preprocessing/Feature-Extraction/特征转化.md","mtime":"2019-01-09T04:06:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-10T10:22:42.006Z"},"basePath":"../../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../../gitbook/gitbook.js"></script>
+    <script src="../../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
