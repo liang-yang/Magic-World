@@ -91,10 +91,61 @@ print(measurements_hash.toarray())
 
 ## 3. Text feature extraction
 
+scikit-learn 提供如下方法将文本转化为数字化特征向量：
+
+- **tokenizing** 
+- **counting**
+- **normalizing & weighting**
+
+通过这三个步骤处理文本的方式称作 “**Bag of Words**”。
+
+由于此种方式处理后的矩阵很稀疏，因此会通过 scipy.sparse 包进行存储和处理。
+
+### 3.1 tokenizing & counting
+
+通过类 [CountVectorizer](https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html) 实现 tokenizing 和 counting。需要注意：
+
+1. 默认的 tokenizing 要求单词长度大于2；
+2. 我们可以通过函数 build_analyzer 得到执行 tokenizing 的函数；
+3. 如果训练（fit）中不包含某word，那么转换（transform）时此word不会在feature list中；
+4. scikit-lear 支持 N-grams 分词，由构造函数的 ngram_range 参数控制；
+5. stop word 可通过语料库内文档的词频自动检测；
 
 
+Parameters | Data-Type | Default | Comment | Note
+:-:|:-:|:-:|:-:|:-:
+input | {‘filename’, ‘file’, ‘content’} | ’content’ | 入参类型 | -
+encoding | string | ‘utf-8’ | 编解码格式 | -
+decode_error | {‘strict’, ‘ignore’, ‘replace’} | ‘strict’ | 编解码错误的处理方式 | -
+strip_accents | {‘ascii’, ‘unicode’, None} | None | - | -
+lowercase | boolean | True | 是否转化为小写字母 | -
+preprocessor | callable | None | transformation模块 | -
+tokenizer | callable | None | 分词模块 | -
+stop_words | string {‘english’}, list | None | ‘english’加载既定词汇表，list则为stop词汇表 | -
+token_pattern | string | ’(?u)\b\w\w+\b’ | tokenizing时的正则表达式，默认多个数字字母字符并通过标点符号分隔 | -
+ngram_range | tuple (min_n, max_n) | (1, 1) | N-grams 分词中N的范围 | -
+analyzer | {‘word’, ‘char’, ‘char_wb’} | ’word’ | ‘word’表示分出来的单词, ‘char’表示根据N-grams分出来的字符串, ‘char_wb’表示N-grams分词时不会跨边界 | -
+max_df | float, int | 1.0 | 构建词汇表时，忽略文档词频高于此阈值的词汇。浮点型表示文档比例，整型表示绝对数量 | -
+min_df | float, int | 1 | 构建词汇表时，忽略文档词频低于此阈值的词汇。浮点型表示文档比例，整型表示绝对数量 | -
+max_features | int | None | 取语料库中词频排序的 top max_features 形成词汇表 | -
+vocabulary | Mapping | None | 人为指定的词汇表 | -
+binary | boolean | False | 如果为True，则所有非零的特征值均为1 | -
+dtype | type | numpy.int64’ | transform() 和 fit_transform() 返回的数据格式 | -
 
 
+Attributes | Data-Type | Comment | Note
+:-:|:-:|:-:|:-:
+vocabulary_ | dict | 特征列的映射，包含序列值 | -
+stop\_words_ | set | 由于 max_df、min_df、max_features 等配置形成的 stop words | -
+
+
+Methods | Parameters | Returns | Comment | Note
+:-:|:-:|:-:|:-:|:-:
+- | - | - | - | -
+- | - | - | - | -
+- | - | - | - | -
+- | - | - | - | -
+- | - | - | - | -
 
 
 ## 4. Image feature extraction
