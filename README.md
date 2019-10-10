@@ -1,6 +1,6 @@
 <!-- toc -->
 
-# Machine Learning
+# Magic World
 
 
 
