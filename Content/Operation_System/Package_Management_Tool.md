@@ -41,8 +41,8 @@ RPM包并不是跨平台的，RedHat的RPM包与SUSE的RPM包不能混用。
 
 ### 1.2. RPM Command
 
-Reference:  
--- [All you have to know about RPM](http://fedoranews.org/alex/tutorial/rpm/)
+> Reference:  
+> -- [All you have to know about RPM](http://fedoranews.org/alex/tutorial/rpm/)
 
 Scene | Command | Description
 :-: | :-: | :-:
@@ -70,8 +70,10 @@ RPM数据库文件位于：/var/lib/rpm
 
 若库损坏，很多RPM的查询将无法使用。对损坏的数据库，可以进行数据库重建：
 
-> rpm --initdb #新建数据库   
-> rpm --rebuilddb #重建数据库
+{%ace edit=true, lang='python'%}
+rpm --initdb #新建数据库   
+rpm --rebuilddb #重建数据库
+{%endace%}
 
 ## 2. YUM
 
@@ -119,7 +121,7 @@ yum的命令形式一般是如下：_yum [options] [subcommand] [package ...]_�
     > obsoletes: 废弃的包     
     > recent: 新添加进yum仓库的包     
 
-    例如，可通过 yum list installed \*mysql\* 查询已安装的包含mysql的软件包。   
+    例如，可通过 yum list installed *mysql* 查询已安装的包含mysql的软件包。
 
     查询结果说明：
     
@@ -150,43 +152,57 @@ yum的命令形式一般是如下：_yum [options] [subcommand] [package ...]_�
 
 以安装mysql为例导入三方仓库。在操作系统自带的仓库中没有mysql软件包，因此以安装软件包的方式导入仓库：
 
-> rpm -ivh https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
+{%ace edit=true, lang='python'%}
+rpm -ivh https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm
+{%endace%}
 
 安装后查询：
 
-> yum list all \*mysql80\*
+{%ace edit=true, lang='python'%}
+yum list all *mysql80*
+{%endace%}
 
 ![](https://tva1.sinaimg.cn/large/006y8mN6gy1g8859g6hucj30j8020glm.jpg)
 
 可以看出，我们已安装了软件包 mysql80-community-release.noarch。再查询 mysql 相关的仓库：
 
-> yum repolist all \*mysql\*
+{%ace edit=true, lang='python'%}
+yum repolist all *mysql*
+{%endace%}
 
 ![](https://tva1.sinaimg.cn/large/006y8mN6gy1g885gqz5sgj30ja09wta8.jpg)
 
 可以看出，新增了不少的 mysql 相关的仓库。这里，我们想安装 MySQL 5.7 版本，因此，禁用 8.0版本仓库，启用5.7版本仓库。
 
-> yum-config-manager --disable mysql80-community    
-> yum-config-manager --enable mysql57-community
+{%ace edit=true, lang='python'%}
+yum-config-manager --disable mysql80-community    
+yum-config-manager --enable mysql57-community
+{%endace%}
 
 这样，我们就可以安装 5.7 版本的 MySQL 数据库了。
 
-> yum install -y mysql-community-server
+{%ace edit=true, lang='python'%}
+yum install -y mysql-community-server
+{%endace%}
 
 ### 3.2. EPEL
 
-Reference：   
--- [EPEL](https://fedoraproject.org/wiki/EPEL/zh-cn)
+> Reference：   
+> -- [EPEL](https://fedoraproject.org/wiki/EPEL/zh-cn)
 
 EPEL（Extra Packages for Enterprise Linux）是由 Fedora 社区打造，为“红帽系”的操作系统提供额外的软件包，适用于RHEL、CentOS和Scientific Linux。
 
 在 CentOS 中，可直接通过安装 epel-release 软件包的形式安装：
 
-> yum install epel-release
+{%ace edit=true, lang='python'%}
+yum install epel-release
+{%endace%}
 
 或者通过网络安装：
 
-> rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+{%ace edit=true, lang='python'%}
+rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+{%endace%}
 
 安装前，没有EPEL相关的仓库：
 
