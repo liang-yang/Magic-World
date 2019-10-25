@@ -145,24 +145,66 @@ systemctl enable vsftpd.service
 > userlist_enable=YES    
 > tcp_wrappers=YES    
 
+## 6. Apache & PHP & phpMyAdmin
 
+> Reference:     
+> -- [LAMP安装](https://linux.cn/article-1567-1.html)    
+> -- [httpd.apache.org](http://httpd.apache.org/docs/current/)   
 
----
+### 6.1. Apache
 
-## LAMP
+通过 yum 安装 Apache Httpd：
 
-> Reference:
-> -- [LAMP安装](https://linux.cn/article-1567-1.html)
-
-### Apache
-
-{%ace edit=true, lang='java'%}
+{%ace edit=true, lang='python'%}
 yum install -y httpd
+systemctl enable httpd 
+systemctl start httpd
+{%endace%}
+
+安装后直接通过浏览器访问当前IP，例如本IP为 106.13.206.49，直接访问 http://106.13.206.49 就会呈现 Apache Http Server 的页面。
+
+### 6.2. PHP
+
+通过 yum 安装 PHP：
+
+{%ace edit=true, lang='python'%}
+yum install -y php
+{%endace%}
+
+安装后，我们可在 Apache 目录下创建文件：
+
+{%ace edit=true, lang='python'%}
+vi /var/www/html/testphp.php
+{%endace%}
+
+添加如下内容：
+
+    <?php phpinfo(); ?>
+
+重启httpd服务后访问 http://106.13.206.49/testphp.php ，可以看到我们安装的 PHP 信息。
+
+### 6.3. phpMyAdmin
+
+通过 yum 安装 phpMyAdmin（需要epel-release）：
+
+{%ace edit=true, lang='python'%}
+yum install -y phpMyAdmin
 {%endace%}
 
 
+phpMyAdmin 的访问权限等相关配置在 /etc/httpd/conf.d/phpMyAdmin.conf 中。 为使得 phpMyAdmin 可以远程访问，需要修改 /etc/httpd/conf.d/phpMyAdmin.conf 中的 RequireAny 节点为 Require all granted，如下图所示：
 
-### PHP
+![](https://tva1.sinaimg.cn/large/006y8mN6gy1g8amgfjgjaj30830em0t8.jpg)
+
+修改配置后重启 httpd 服务，即可访问 http://106.13.206.49/phpmyadmin 。
+
+phpMyAdmin 访问的 MySQL 服务器的登录信息等相关配置在 /etc/phpMyAdmin/config.inc.php 中。 phpMyAdmin 在 http://106.13.206.49/phpmyadmin/setup 提供了web版的配置页面，但访问前需要先删除默认的 /etc/phpMyAdmin/config.inc.php 文件，否则会[报错](https://stackoverflow.com/questions/42014742/logging-into-phpmyadmin-error)。web版相关配置可[参考](https://blog.csdn.net/qq_37608398/article/details/80716458)，但需要注意，web版配置后是得到配置的内容，并没有保存到服务器的配置文件中，因此，需要人工拷贝配置内容保存到 /etc/phpMyAdmin/config.inc.php 中。
+
+以上全部配置完成后，重启httpd服务，即可正常访问 phpMyAdmin 了。
+
+
+
+
 
 
 

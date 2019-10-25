@@ -23,7 +23,8 @@ sysctl vm.swappiness=80
 ## 2. Linux Command
 
 > whereis httpd   
-> man rpm
+> man rpm    
+> lsof -i:80
 
 
 
