@@ -24,7 +24,7 @@ mysql -uroot -p$(awk '/temporary password/{print $NF}' /var/log/mysqld.log) #使
 {%ace edit=true, lang='python'%}
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'Y!a4364sdfsdfsdf'; #修改root用户密码
 mysql> CREATE USER 'admin'@'%' IDENTIFIED BY 'W!b342f6dsfds3'; #创建可远程登录的admin用户
-mysql> GRANT ALL ON *.* TO 'admin'@'%'; #对admin用户对所有库和表赋权
+mysql> GRANT ALL ON *.* TO 'admin'@'%' WITH GRANT OPTION; #对admin用户对所有库和表赋权
 mysql> exit
 {%endace%}
 
@@ -94,7 +94,7 @@ wget -c https://repo.anaconda.com/miniconda/Miniconda3-4.6.14-Linux-x86_64.sh
 bash Miniconda3-4.6.14-Linux-x86_64.sh
 source ~/.bashrc
 conda -V
-conda update python
+conda update -y python
 conda install -y numpy pandas scikit-learn matplotlib pymysql statsmodels lxml
 {%endace%}
 
@@ -202,8 +202,9 @@ phpMyAdmin 访问的 MySQL 服务器的登录信息等相关配置在 /etc/phpMy
 
 以上全部配置完成后，重启httpd服务，即可正常访问 phpMyAdmin 了。
 
+### 7. SSL
 
-
+https://certbot.eff.org/
 
 
 

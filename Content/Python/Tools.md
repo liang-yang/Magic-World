@@ -1,6 +1,6 @@
 <!-- toc -->
 
-# Tool Module
+# Tools
 
 ## tracemalloc
 
