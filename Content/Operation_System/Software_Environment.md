@@ -126,24 +126,24 @@ systemctl start vsftpd.service
 systemctl enable vsftpd.service
 {%endace%}
 
-> anonymous_enable=NO #禁止匿名登录FTP服务器        
-> local_enable=YES #允许本地用户登录FTP服务器    
-> write_enable=YES #允许登录FTP服务器的用户写权限    
-> local_root=/magic/ftp #设置本地用户登录后所在的目录    
-> chroot_local_user=YES #全部用户被限制在主目录    
-> chroot_list_enable=YES #启用例外用户名单    
-> chroot_list_file=/etc/vsftpd/chroot_list #指定例外用户列表，这些用户不被锁定在主目录    
->
-> allow_writeable_chroot=YES    
-> local_umask=022    
-> dirmessage_enable=YES    
-> xferlog_enable=YES    
-> connect_from_port_20=YES    
-> xferlog_std_format=YES    
-> listen=YES    
-> pam_service_name=vsftpd    
-> userlist_enable=YES    
-> tcp_wrappers=YES    
+    anonymous_enable=NO #禁止匿名登录FTP服务器    
+    local_enable=YES #允许本地用户登录FTP服务器    
+    write_enable=YES #允许登录FTP服务器的用户写权限    
+    local_root=/magic/ftp #设置本地用户登录后所在的目录    
+    chroot_local_user=YES #全部用户被限制在主目录    
+    chroot_list_enable=YES #启用例外用户名单    
+    chroot_list_file=/etc/vsftpd/chroot_list #指定例外用户列表，这些用户不被锁定在主目录        
+        
+    allow_writeable_chroot=YES    
+    local_umask=022    
+    dirmessage_enable=YES    
+    xferlog_enable=YES    
+    connect_from_port_20=YES    
+    xferlog_std_format=YES    
+    listen=YES    
+    pam_service_name=vsftpd    
+    userlist_enable=YES    
+    tcp_wrappers=YES    
 
 ## 6. Apache & PHP & phpMyAdmin
 
@@ -202,9 +202,46 @@ phpMyAdmin 访问的 MySQL 服务器的登录信息等相关配置在 /etc/phpMy
 
 以上全部配置完成后，重启httpd服务，即可正常访问 phpMyAdmin 了。
 
-### 7. SSL
+## 7. HTTPS
 
-https://certbot.eff.org/
+### 7.1 Virtual Host
+
+> Reference:     
+> -- [apache.vhosts.name-based](http://httpd.apache.org/docs/2.4/vhosts/name-based.html)    
+
+安装 HTTPS 证书前，首先需要为网站配置虚拟主机，如为 lmay.net 配置虚拟主机：
+
+{%ace edit=true, lang='python'%}
+mkdir -p /var/www/lmay.net
+vim /etc/httpd/conf/httpd.conf #新增如下内容
+{%endace%}
+
+      ServerName localhost:80    
+      <VirtualHost *:80>     
+         ServerName www.lmay.net      
+         ServerAlias lmay.net *.lmay.net    
+         DocumentRoot "/var/www/lmay.net"    
+      </VirtualHost>    
+
+
+### 7.2 certbot
+
+> Reference:     
+> -- [certbot](https://certbot.eff.org/)     
+
+使用 certbot 安装 HTTPS 证书：
+
+{%ace edit=true, lang='python'%}
+yum install -y yum-utils
+yum-config-manager --enable rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional
+yum install -y certbot python2-certbot-apache
+certbot --apache
+httpd -S # check config
+{%endace%}
+
+
+
+
 
 
 
