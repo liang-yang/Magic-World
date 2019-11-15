@@ -102,7 +102,7 @@ $$
 
 根据上面的分析，Bias 和 Variance 的产生原因都存在 模型选择不合适。但是，二者所指的 不合适 的意义并不一样，准确的说是互相矛盾的。理论上，模型越复杂，学习能力越强，模型拟合越准确。但同时噪声也会被学习的越多，所以 Variance 越大。也就是说，随着模型复杂度的增加，Bias 减小，Variance 增大，如下图所示。
 
-![](http://ww2.sinaimg.cn/large/006y8mN6gy1g6lkh7580qj30do08lmx8.jpg)
+![](https://ww2.sinaimg.cn/large/006y8mN6gy1g6lkh7580qj30do08lmx8.jpg)
 
 需要注意，这里的 Bias 为数学期望，不能单纯的追求低 Bias，这在实际建模中并无意义。 因此，我们希望找到合适的模型复杂度，均衡 Bias 和 Variance，得到最小的泛化误差。
 

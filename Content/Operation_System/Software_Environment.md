@@ -235,8 +235,8 @@ vim /etc/httpd/conf/httpd.conf #新增如下内容
 yum install -y yum-utils
 yum-config-manager --enable rhui-REGION-rhel-server-extras rhui-REGION-rhel-server-optional
 yum install -y certbot python2-certbot-apache
-certbot --apache
-httpd -S # check config
+certbot --apache #select both choices like 1,2 to support both website
+httpd -S #check config
 {%endace%}
 
 
