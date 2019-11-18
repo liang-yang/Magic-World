@@ -20,9 +20,13 @@
 
 ## 3. Feed Forward
 
-$$l$$ 层权重矩阵 | $$l$$ 层偏置向量 | $$l$$ 层带权输入 | 激活函数 | $$l$$ 层激活向量 
-:-: | :-: | :-: | :-: | :-:
-$$w^l$$ | $$b^l$$ | $$z^l$$ | $$\sigma$$ | $$a^l$$ 
+符号 | 含义
+:-: | :-: 
+$$w^l$$ | $$l$$ 层权重矩阵
+$$b^l$$ | $$l$$ 层偏置向量
+$$z^l$$ | $$l$$ 层带权输入
+$$\sigma$$ | 激活函数
+$$a^l$$ | $$l$$ 层激活向量
 
 $$
 z^l = w^l \cdot a^{l-1} + b^l
@@ -108,20 +112,31 @@ reLU | $$\displaystyle \begin{cases} 0 &\text{if } x \leq 0 \\ x &\text{if } x >
 > 1. 根据【Back Propagation】公式四：$$\displaystyle \frac{\partial C}{\partial w_{jk}^l} = \delta^l_j a_k^{l-1}$$，神经元输入权重的梯度正负号由 $$\delta^l_j$$ 和 $$a^{l-1}_k$$ 决定；
 > 2. 对于单个神经元来说，$$\delta^l_j$$ 是固定的；
 > 3. 假设激活函数非原点中心，例如 sigmoid 其输出恒大于0，即 $$a^{l-1}_k$$ 恒大于0；
-> 4. 因此，对于单个神经元来说，其所有输入权重的梯度的正负号相同，即下降方向相同。此时，假设各输入权重的最优解并不同符号，那么梯度下降的过程就会比较曲折，收敛速度比较慢，如下图所示。
+> 4. 因此，对于单个神经元来说，其所有输入权重的梯度的正负号相同，即下降方向相同。此时，假设各输入权重的最优解并不是相同的正负号，那么梯度下降的过程就会比较曲折，收敛速度比较慢，如下图所示。
 
 <div align=center>![](https://tva1.sinaimg.cn/bmiddle/006y8mN6gy1g8ypkpfhk3j30i80gc3yp.jpg)
 
 ### 5.4. Gradient Vanishing
 
 > Reference    
-> -- [Gradient Vanishing](https://www.cnblogs.com/yangmang/p/7477802.html)
+> -- [Gradient Vanishing](https://www.cnblogs.com/yangmang/p/7477802.html)       
+> -- [神经网络梯度消失和梯度爆炸及解决办法](https://mp.weixin.qq.com/s/6xHC5woJND14bozsBNaaXQ) 
 
-梯度弥散，是指靠近输入层的神经元的梯度非常小，几乎接近于0，导致参数几乎无法学习。
+梯度弥散，也叫梯度消失，是指靠近输入层的神经元的梯度非常小，几乎接近于0，导致参数几乎无法学习。
 
-根据【Back Propagation】公式二：$$\displaystyle \delta^l = ((w^{l+1})^T \cdot \delta^{l+1}) \odot \sigma^{'}(z^l)$$，对其递归转换，可知 $$\delta^l$$ 受 $$\sigma^{'}$$ 的指数级影响。那么当 $$\sigma^{'} < 1$$ 时，$$\delta^l$$ 会逐渐趋近于 0，即梯度弥散。
+**造成梯度弥散的根本原因，是由于 激活函数 的 饱和性。 **根据【Back Propagation】公式二：$$\displaystyle \delta^l = ((w^{l+1})^T \cdot \delta^{l+1}) \odot \sigma^{'}(z^l)$$，对其递归转换，可知 $$\delta^l$$ 受 $$\sigma^{'}$$ 的指数级影响。那么当 $$\sigma^{'} < 1$$ 时，尤其当 $$\sigma^{'} \to 0$$ 时，$$\delta^l$$ 会逐渐趋近于 0，即梯度弥散。
 
-类似的，如果 $$\sigma^{'} > 1$$，$$\delta^l$$ 会指数级增长，形成 梯度爆炸（Gradient Exploding）。
+> 1. 函数的饱和性，是指函数的导数趋近于0；
+> 2. 实际上，根据上面的公式，是否梯度弥散还与权重 $$w$$ 有关，因为 $$\delta$$ 实际是受 $$w$$ 和 $$\sigma^{'}$$ 的乘积的指数级影响。但 $$w$$ 一般初始取值较小，更多还是考察 $$\sigma^{'}$$；
+> 3. 以 sigmoid 的为例，其导数值域为 (0, 1/4)，曲线如下图所示。当z值很大或很小时，$$\sigma^{'}$$ 趋近于0，导致梯度弥散；
+
+<div align=center>![](https://tva1.sinaimg.cn/bmiddle/006y8mN6gy1g92aca8mmkj30hs0dcgls.jpg)
+
+与 梯度弥散 相对的，如果 $$\sigma^{'} > 1$$，$$\delta^l$$ 会指数级增长，形成 梯度爆炸（Gradient Exploding）。
+
+### 5.5. ReLU
+
+ReLU，Rectified Linear Unit，修正线性单元，
 
 
 
@@ -146,9 +161,6 @@ reLU | $$\displaystyle \begin{cases} 0 &\text{if } x \leq 0 \\ x &\text{if } x >
 
 
 
-- 偏置 b 有什么意义？怎么理解？
-
-    从分类的角度，可以看作分类阈值；
     
 - 梯度下降的动态学习步长；
 
@@ -157,47 +169,6 @@ reLU | $$\displaystyle \begin{cases} 0 &\text{if } x \leq 0 \\ x &\text{if } x >
 - 怎么样初始化参数？
 
 ---
-
-- Perceptron Neuron
-
-$$
-output = \begin{cases}
-   0 &\text{if } \sum_j w_jx_j \leq threshold \\
-   1 &\text{if } \sum_j w_jx_j > threshold
-\end{cases}
-$$
-
-通过 $$ w \cdot x = \sum_j w_jx_j $$ 和 $$ b = - threshold $$ 的转换，可以得到：
-
-$$
-output = \begin{cases}
-   0 &\text{if } w \cdot x + b \leq 0 \\
-   1 &\text{if } w \cdot x + b > 0
-\end{cases}
-$$
-
-- Sigmoid Neuron
-
-Perceptron Neuron 中，$$output$$ 的变化并不平滑，这导致 权重$$w$$ 和 偏置$$b$$ 的微小变化不一定能体现到 $$output$$，不利于自动学习，因此引入 Sigmoid Neuron：
-
-$$
-output = Sigmoid(z) = \frac{1}{1+e^{-z}} = \frac{1}{1+e^{-(w \cdot x + b)}}
-$$
-
-Sigmoid 相对 Perceptron 就平滑的多，这样 权重$$w$$ 和 偏置$$b$$ 的微小变化会体现到 $$output$$ 的变化，更利于自动学习。
-
-![](https://tva1.sinaimg.cn/large/006y8mN6gy1g8il3ob1f1j30hs0dc0sv.jpg)
-
-梯度下降算法
-
-随机梯度下降算法
-
-
-
-
-
-
-
 
 
 二次（quadratic）代价函数
