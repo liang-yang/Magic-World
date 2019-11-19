@@ -86,19 +86,19 @@ $$C$$ | 代价函数
 
 ### 5.2. Function List
 
-理论上，所有的非线性函数都可以作为激活函数，常见的有：sigmoid, tanh, reLU 等。
+理论上，所有的非线性函数都可以作为激活函数（后面我们会看到，还有单调递增的要求），常见的有：Sigmoid, Tanh, ReLU 等。
 
-<div align=center>![](https://tva1.sinaimg.cn/large/006y8mN6gy1g8yvopznvoj30hs0dcq37.jpg)
+<div align=center>![](https://tva1.sinaimg.cn/bmiddle/006y8mN6gy1g8yvopznvoj30hs0dcq37.jpg)
 
 激活函数 | 公式 | 是否平滑 | 是否原点中心 | 是否梯度弥散 
 :-: | :-: | :-: | :-: | :-: 
-step | $$\displaystyle \begin{cases} 0 &\text{if } x \leq 0 \\ 1 &\text{if } x > 0 \end{cases} $$ | 否 | 否 | - 
-sigmoid | $$\displaystyle \frac{1}{1+e^{-x}} $$ | 是 | 否 | 是  
-tanh | $$\displaystyle \frac{e^x-e^{-x}}{e^x+e^{-x}}$$ | 是 | 是 | 是 
-reLU | $$\displaystyle \begin{cases} 0 &\text{if } x \leq 0 \\ x &\text{if } x > 0 \end{cases} $$ | 是 | 否 | 否 
+Step | $$\displaystyle \begin{cases} 0 &\text{if } x \leq 0 \\ 1 &\text{if } x > 0 \end{cases} $$ | 否 | 否 | - 
+Sigmoid | $$\displaystyle \frac{1}{1+e^{-x}} $$ | 是 | 否 | 是  
+Tanh | $$\displaystyle \frac{e^x-e^{-x}}{e^x+e^{-x}}$$ | 是 | 是 | 是 
+ReLU | $$\displaystyle \max(0, x) $$ | 是 | 否 | 否 
 
 > 1. 函数非线性，是指其导数不恒等，否则神经网络不具备非线性拟合能力；
-> 2. 函数平滑，是指其导数不为零（至少部分不为零），否则无法梯度下降；
+> 2. 函数平滑，是指其导数连续且不恒为零，否则无法梯度下降；
 
 ### 5.3. Zero Center
 
@@ -126,21 +126,99 @@ reLU | $$\displaystyle \begin{cases} 0 &\text{if } x \leq 0 \\ x &\text{if } x >
 
 **造成梯度弥散的根本原因，是由于 激活函数 的 饱和性。 **根据【Back Propagation】公式二：$$\displaystyle \delta^l = ((w^{l+1})^T \cdot \delta^{l+1}) \odot \sigma^{'}(z^l)$$，对其递归转换，可知 $$\delta^l$$ 受 $$\sigma^{'}$$ 的指数级影响。那么当 $$\sigma^{'} < 1$$ 时，尤其当 $$\sigma^{'} \to 0$$ 时，$$\delta^l$$ 会逐渐趋近于 0，即梯度弥散。
 
-> 1. 函数的饱和性，是指函数的导数趋近于0；
-> 2. 实际上，根据上面的公式，是否梯度弥散还与权重 $$w$$ 有关，因为 $$\delta$$ 实际是受 $$w$$ 和 $$\sigma^{'}$$ 的乘积的指数级影响。但 $$w$$ 一般初始取值较小，更多还是考察 $$\sigma^{'}$$；
+> 1. 函数的饱和性，是指函数的导数趋近于0。需要注意，这里导数为0是指的激活函数，而不是代价函数，所以导数为0与最优解没有直接关系；
+> 2. 实际上，根据上面的公式，是否梯度弥散还与权重 $$w$$ 有关，因为 $$\delta$$ 实际是受 $$w$$ 和 $$\sigma^{'}$$ 的乘积的指数级影响。但 $$w$$ 一般初始取值较小，变化幅度也较小，更多还是考察 $$\sigma^{'}$$；
 > 3. 以 sigmoid 的为例，其导数值域为 (0, 1/4)，曲线如下图所示。当z值很大或很小时，$$\sigma^{'}$$ 趋近于0，导致梯度弥散；
+> 4. 为规避激活函数饱和性的问题，一方面可以更换激活函数，一方面可以通过 normalization 减小每层的 z 向量，使得其偏离饱和区间；
 
 <div align=center>![](https://tva1.sinaimg.cn/bmiddle/006y8mN6gy1g92aca8mmkj30hs0dcgls.jpg)
 
 与 梯度弥散 相对的，如果 $$\sigma^{'} > 1$$，$$\delta^l$$ 会指数级增长，形成 梯度爆炸（Gradient Exploding）。
 
+因此，从规避 梯度弥散 和 梯度爆炸 的角度，活跃函数的导数最好为 1，但导数恒为 1 又不具备了非线性。由此，引入了 ReLU及其系列 的激活函数。
+
 ### 5.5. ReLU
 
-ReLU，Rectified Linear Unit，修正线性单元，
+ReLU，Rectified Linear Unit，修正线性单元，虽然简单，却是目前最为常用的 激活函数：
+
+- 在正区间规避了 梯度弥散 的问题；
+- 计算速度非常快，不需要计算指数；
+- 在正区间导数恒为1，大于 Sigmoid/Tanh，因此收敛速度更快；
+
+当然，ReLU 也存在如下问题：
+
+- 非 Zero Center；
+- Dead ReLU Problem，由于在负区间函数值恒为0，使得一旦某神经元的 z 值为负数时，就无法对最终输出提供信息，即神经元进入Dead状态。且由于此时其导数也恒为0，即 z 值无法再更新，神经元会永远处于Dead状态；
+
+为了规避 ReLU 的问题，提出了 Leaky ReLU，ELU(Exponential Linear Unit) 等优化方案（虽然理论上优于ReLU，但在实际使用中目前并没有证明它们总是优于ReLU）。
+
+激活函数 | 公式  
+:-: | :-:  
+ReLU | $$\displaystyle \max(0, x) $$  
+Leaky ReLU | $$\displaystyle \max(0.01x, x) $$  
+ELU | $$\displaystyle \begin{cases} \alpha (e^x-1) &\text{if } x \leq 0 \\ x &\text{if } x > 0 \end{cases} $$ 
+
+<div align=center>![](https://tva1.sinaimg.cn/bmiddle/006y8mN6gy1g93dtuoliij30hs0dc0sw.jpg)
+
+### 5.6. Maxout
+
+> Reference    
+> -- [GoogLeNet, Maxout and NIN](https://zhuanlan.zhihu.com/p/42704781)     
+
+Maxout 的数学表达式如下：
+
+$$
+Maxout(k, x) = \max(w_1^Tx+b_1, w_2^Tx+b_2, \cdots, w_k^Tx+b_k)
+$$
+
+资料中常见的函数图像如下：
+
+<div align=center>![](https://tva1.sinaimg.cn/large/006y8mN6gy1g93e8no44kj30k004wwel.jpg)
+
+> 1. 图1，$$k=2$$，2条直线，$$y=0,\ y=x$$，这也就是ReLU函数；
+> 2. 图2，$$k=2$$，2条直线，$$y=-x,\ y=x$$；
+> 3. 图3，$$k=5$$，5条直线，从左到右分别取了绿色红色青色紫色黄色的各一段，都是对应区间里五条线性函数的最大值；
+
+当 $$k$$ 足够大时，Maxout 可以以任意小的精度逼近任何凸函数。
+
+Maxout 的问题是，网络的参数是其他激活函数的 $$k$$ 倍，但没有带来等价的精度提升。
+
+### *5.7. Softmax
+
+$$
+softmax(z_k) = \frac{e^{z_k}}{\sum_{i=1}^n e^{z_i}}
+$$
+
+<div align=center>![](https://tva1.sinaimg.cn/large/006y8mN6gy1g93fnryvlij30iu0az74t.jpg)
+
+它只会被用在网络中的最后一层，用来进行最后的分类和归一化。
+
+
+https://www.zhihu.com/search?type=content&q=Softmax
+
+https://www.zhihu.com/question/23765351/answer/240869755
+
+https://zhuanlan.zhihu.com/p/25723112
 
 
 
-## 6. Cost Function
+## *6. Cost Function
+
+### *6.1. Quadratic
+
+二次代价函数
+
+$$
+C = \frac{1}{2n} \sum_{i=1}^n (y_i-a^L(x_i))^2
+$$
+
+### *6.2. Cross Entropy
+
+交叉熵代价函数
+
+$$
+C = - \frac{1}{n} \sum_{i=1}^n (y \ln a^L(x_i) + (1-y) \ln (1-a^L(x_i)))
+$$
 
 
 
@@ -150,7 +228,16 @@ ReLU，Rectified Linear Unit，修正线性单元，
 
 
 
-## Why use Nerual Network?
+## 7. Why use Nerual Network
+
+> Reference    
+> -- [神经网络的理解与实现](https://www.cnblogs.com/lliuye/p/9183914.html)    
+> -- [理解神经网络的激活函数](https://zhuanlan.zhihu.com/p/36763712)    
+
+万能逼近（universal approximation）定理：
+
+
+
 
 
 
@@ -168,30 +255,9 @@ ReLU，Rectified Linear Unit，修正线性单元，
 
 - 怎么样初始化参数？
 
----
 
 
-二次（quadratic）代价函数
 
-$$
-C = \frac{1}{2n} \sum_{i=1}^n (y_i-a^L(x_i))^2
-$$
-
-交叉熵（cross entropy）代价函数
-
-$$
-C = - \frac{1}{n} \sum_{i=1}^n (y \ln a^L(x_i) + (1-y) \ln (1-a^L(x_i)))
-$$
-
-softmax:
-
-$$
-softmax(z_k) = \frac{e^{z_k}}{\sum_{i=1}^n e^{z_i}}
-$$
-
-$$
-sigmoid(z) = \frac{1}{1+e^{-z}}
-$$
 
 
 Dropout
@@ -200,18 +266,14 @@ neurons saturated
 
 
 
-sigmoid 不是non-zero center，即不对原点对称
-
-https://blog.csdn.net/weixin_41417982/article/details/81437088
-
-rectified linear unit
+一般现在的权重初始化是用Xavier。
 
 
 <div align=center>![](https://tva1.sinaimg.cn/large/006y8mN6gy1g8ym3oc7gxj30yb0u042c.jpg)
 
 ## Reference
 
-- [神经网络的理解与实现](https://www.cnblogs.com/lliuye/p/9183914.html)
+
 
 
 
