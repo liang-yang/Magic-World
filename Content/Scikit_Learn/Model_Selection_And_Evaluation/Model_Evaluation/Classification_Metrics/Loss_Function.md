@@ -100,7 +100,9 @@ $$
 - 如果 $$\hat{y} \cdot y >= 1$$，则损失为：$$0$$；
 
 Hinge Loss 的图像为：
-![](http://ww4.sinaimg.cn/large/006tNc79gy1g51q4cxpd2j30fz0bngln.jpg)
+
+<div align=center>![](https://tva1.sinaimg.cn/bmiddle/006tNc79gy1g51q4cxpd2j30fz0bngln.jpg)
+
 此即为 Hinge（合页）的由来。
 
 sklearn 中，可通过函数 [sklearn.metrics.hinge_loss](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.hinge_loss.html) 计算 Hinge Loss：

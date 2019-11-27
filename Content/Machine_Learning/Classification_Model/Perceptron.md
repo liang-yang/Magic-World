@@ -1,6 +1,6 @@
 <!-- toc -->
 
-# 感知机(Perceptron)
+# Perceptron
 
 ---
 
