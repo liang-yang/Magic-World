@@ -159,6 +159,8 @@ ReLU，Rectified Linear Unit，修正线性单元，虽然简单，却是目前�
 
 为了规避 ReLU 的问题，提出了 Leaky ReLU，ELU(Exponential Linear Unit) 等优化方案（虽然理论上优于ReLU，但在实际使用中目前并没有证明它们总是优于ReLU）。
 
+另外，有研究指出 ReLU 更好的拟合了生物神经网络的稀疏性，使得其表现更好。具体可参考 [Deep Sparse Rectifier Neural Networks](https://www.cnblogs.com/neopenx/p/4453161.html)。
+
 激活函数 | 公式  
 :-: | :-:  
 ReLU | $$\displaystyle \max(0, x) $$  
